@@ -5,7 +5,7 @@
 
 		<Sidebar v-model="isOpen"/>
 
-		<main class="app-content" :class="{full : !isOpen}">
+		<!--<main class="app-content" :class="{full : !isOpen}">
 			<div class="app-page">
 				<router-view />
 			</div>
@@ -15,7 +15,7 @@
 			<a class="btn-floating btn-large blue" href="#">
 				<i class="large material-icons">add</i>
 			</a>
-		</div>
+		</div> -->
 	</div>
 </template>
 

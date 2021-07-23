@@ -29,5 +29,5 @@ exports.default = parallel (styles, watching);
 
 exports.build = series (
 	cleanDist,
-	parallel (styles, watching)
+	parallel (styles)
 );

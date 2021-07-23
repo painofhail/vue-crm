@@ -7,7 +7,7 @@
 			v-slot="{ href, isExactActive, navigate }"
 		>
 			<li :class="{ active: isExactActive }">
-				<a :href="href" class="waves-effect waves-orange pointer" @click="navigate">{{link.name}}</a>
+				<a :href="href" class="waves-effect waves-orange" @click="navigate">{{link.name}}</a>
 			</li>
 		</router-link>
 	</ul>
@@ -16,11 +16,11 @@
 <script>
 
 const links = [
-	{name: 'Счет', url: '/', exact: true},
-	{name: 'История', url: '/history', exact: false },
-	{name: 'Планирование', url: '/planning', exact: false},
-	{name: 'Новая запись', url: '/record', exact: false},
-	{name: 'Категории', url: '/categories', exact: false}
+	{ name: 'Счет', url: '/' },
+	{ name: 'История', url: '/history' },
+	{ name: 'Планирование', url: '/planning' },
+	{ name: 'Новая запись', url: '/record' },
+	{ name: 'Категории', url: '/categories' }
 ]
 
 	export default {

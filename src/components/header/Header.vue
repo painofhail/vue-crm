@@ -1,6 +1,6 @@
 <template>
-	<nav class="navbar orange lighten-1">
-		<div class="nav-wrapper">
+	<header class="header">
+		<div class="header__wrapper">
 			<div class="navbar-left">
 				<a href="#" @click.prevent="$emit('toggleSidebar')">
 					<i class="material-icons black-text">dehaze</i>
@@ -27,7 +27,7 @@
 				</li>
 			</ul>
 		</div>
-	</nav>
+	</header>
 </template>
 
 <script>

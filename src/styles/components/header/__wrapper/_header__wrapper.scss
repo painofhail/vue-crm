@@ -1,0 +1,9 @@
+.header__wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+
+  height: 100%;
+	padding: 0 2rem;
+}
