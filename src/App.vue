@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+	<div id="app">
 		<component :is="layout">
 			<router-view/>  <!-- Vue рендерит сюда все страницы, которые загружаются по роуту -->
 		</component>
-  </div>
+	</div>
 </template>
 
 <script>
