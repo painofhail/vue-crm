@@ -1,0 +1,18 @@
+.breadcrumb-wrap {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	a {
+		display:inline-flex;
+		align-items: center;
+		color:rgba(0,0,0,.7) !important;
+
+		&::before {
+			display:inline-flex;
+			align-items: center;
+			color:rgba(0,0,0,.7) !important;
+		}
+	}
+}
+

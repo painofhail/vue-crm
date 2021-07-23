@@ -1,0 +1,11 @@
+.currency-line {
+	display: flex;
+	align-items: center;
+	border-bottom: 2px solid #fff;
+	padding-bottom: 1rem;
+	padding-top: 1.5rem;
+
+	& span{
+		font-size:1.5rem
+	}
+}

@@ -1,0 +1,13 @@
+.app-sidenav {
+	padding-top: 5px;
+	position: absolute;
+	top: 64px;
+	width: 250px;
+	transition: transform .3s;
+	bottom: 0 !important;
+	height: auto !important;
+
+	&.open {
+		transform: translateX(0);
+	}
+}
