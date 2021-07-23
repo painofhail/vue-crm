@@ -2,6 +2,12 @@ const { series, parallel, src, dest, watch } = require('gulp');
 const scss 					= require('gulp-sass')(require('sass'));
 const concat 				= require('gulp-concat');
 const autoprefixer 	= require('gulp-autoprefixer');
+const del 					= require('del');
+
+// delete dist folder and dist index.html
+function cleanDist () {
+	return del('dist');
+}
 
 // scss-transform, minify style-files
 function styles () {
@@ -20,3 +26,8 @@ function watching () {
 
 // default task
 exports.default = parallel (styles, watching);
+
+exports.build = series (
+	cleanDist,
+	parallel (styles, watching)
+);

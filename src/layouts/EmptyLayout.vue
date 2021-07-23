@@ -3,3 +3,11 @@
 		<router-view />
 	</div>
 </template>
+
+<script>
+// import
+
+export default {
+	name: 'empty-layout',
+}
+</script>
