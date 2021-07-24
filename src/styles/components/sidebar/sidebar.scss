@@ -20,7 +20,7 @@
 
 	li {
 		float: none;
-    line-height: 48px;
+		line-height: 48px;
 
 		&.active {
 			background-color: rgba(0,0,0,0.05);
@@ -28,12 +28,12 @@
 
 		a {
 			color: rgba(0,0,0,0.87);
-    display: block;
-    font-size: 14px;
-    font-weight: 500;
-    height: 48px;
-    line-height: 48px;
-    padding: 0 32px;
+			display: block;
+			font-size: 14px;
+			font-weight: 500;
+			height: 48px;
+			line-height: 48px;
+			padding: 0 32px;
 		}
 	}
 }
