@@ -3,4 +3,5 @@
 	background-color: $header-color;
 }
 
-@import '__wrapper/header__wrapper.scss';
+@import '__wrapper/_header__wrapper.scss';
+@import '__nav-left/_header__nav-left.scss';

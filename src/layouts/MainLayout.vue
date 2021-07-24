@@ -1,11 +1,9 @@
 <template>
 	<div class="app-main-layout">
+		<Header @toggleMenu="showMenu = !showMenu" />
+		<Sidebar :show="showMenu"/>
 
-		<Header @toggleSidebar="isOpen = !isOpen" />
-
-		<Sidebar v-model="isOpen"/>
-
-		<!--<main class="app-content" :class="{full : !isOpen}">
+		<!-- <main class="app-content" :class="{full : !isOpen}">
 			<div class="app-page">
 				<router-view />
 			</div>
@@ -26,7 +24,7 @@
 	export default {
 		name: 'main-layout',
 		data: () => ({
-			isOpen: true,
+			showMenu: true,
 		}),
 		components: {
 			Header,

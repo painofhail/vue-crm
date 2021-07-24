@@ -1,14 +1,16 @@
 <template>
 	<header class="header">
 		<div class="header__wrapper">
-			<div class="navbar-left">
-				<a href="#" @click.prevent="$emit('toggleSidebar')">
-					<i class="material-icons black-text">dehaze</i>
+			<div class="header__nav-left">
+				<a :class="['burger-menu', {'burger-menu--open': burgerOpen }]" href="#" @click.prevent="toggleMenu">
+					<span class="burger-menu__part" />
+					<span class="burger-menu__part" />
+					<span class="burger-menu__part" />
 				</a>
-				<span class="black-text">12.12.12</span>
+				<span class="">12.12.12</span>
 			</div>
 
-			<ul class="right hide-on-small-and-down">
+			<ul class="hide-on-small-and-down">
 				<li>
 					<a class="dropdown-trigger black-text" href="#" data-target="dropdown">
 						USER NAME
@@ -33,7 +35,18 @@
 <script>
 
 	export default {
-		name: 'Header'
+		name: 'Header',
+		data () {
+			return {
+				burgerOpen: false
+			}
+		},
+		methods: {
+			toggleMenu () {
+				this.burgerOpen = !this.burgerOpen;
+				this.$emit('toggleMenu');
+			}
+		}
 	}
 
 </script>

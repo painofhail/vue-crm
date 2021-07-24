@@ -1,0 +1,15 @@
+.burger-menu {
+	display: flex;
+	flex-flow: column wrap;
+	width: 32px;
+	height: 32px;
+
+	&:hover {
+		cursor: pointer;
+		transition: opacity 0.2s linear;
+		opacity: 0.5;
+	}
+}
+
+@import '__part/_burger-menu__part.scss';
+@import '--open/_burger-menu--open.scss';

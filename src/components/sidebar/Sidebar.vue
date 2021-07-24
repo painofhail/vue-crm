@@ -1,10 +1,11 @@
 <template>
-	<ul class="sidenav app-sidenav" :class="{open: value}">
+	<ul class="sidebar" :class="{open: show}">
 		<router-link
 			v-for="link in links"
 			:key="link.url"
 			:to="link.url"
 			v-slot="{ href, isExactActive, navigate }"
+			custom
 		>
 			<li :class="{ active: isExactActive }">
 				<a :href="href" class="waves-effect waves-orange" @click="navigate">{{link.name}}</a>
@@ -25,10 +26,17 @@ const links = [
 
 	export default {
 		name: 'Sidebar',
-		props: ['value'],
-		data: () => ({
-			links
-		})
+		props: {
+			show: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data () {
+			return {
+				links
+			}
+		},
 	}
 
 </script>
