@@ -9,7 +9,7 @@
 			</div>
 		</main>
 
-		<a class="action-button" href="#"><span>+</span></a>
+		<router-link class="action-button" to="/record"><span>+</span></router-link>
 	</div>
 </template>
 

@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 	import EmptyLayout from '@/layouts/EmptyLayout';
 	import MainLayout from '@/layouts/MainLayout';
 
@@ -22,7 +21,6 @@
 			}
 		},
 	}
-
 </script>
 
 <style lang="scss">
