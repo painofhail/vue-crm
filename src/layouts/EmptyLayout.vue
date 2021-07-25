@@ -5,9 +5,7 @@
 </template>
 
 <script>
-// import
-
-export default {
-	name: 'empty-layout',
-}
+	export default {
+		name: 'empty-layout',
+	}
 </script>

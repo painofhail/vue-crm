@@ -1,19 +1,15 @@
 <template>
-	<div class="app-main-layout">
+	<div class="layout-main">
 		<Header @toggleMenu="showMenu = !showMenu" />
-		<Sidebar :show="showMenu"/>
+		<Sidebar :show="showMenu" />
 
-		<!-- <main class="app-content" :class="{full : !isOpen}">
-			<div class="app-page">
+		<main class="layout-main__content" :class="{'layout-main__content--full' : !showMenu}">
+			<div class="layout-main__wrapper">
 				<router-view />
 			</div>
 		</main>
 
-		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large blue" href="#">
-				<i class="large material-icons">add</i>
-			</a>
-		</div> -->
+		<a class="action-button" href="#"><span>+</span></a>
 	</div>
 </template>
 

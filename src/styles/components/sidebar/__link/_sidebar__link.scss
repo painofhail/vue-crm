@@ -1,0 +1,16 @@
+.sidebar__link {
+	display: block;
+	padding: 0 32px;
+
+	font-size: 14px;
+	font-weight: 500;
+	height: 48px;
+	line-height: 48px;
+	color: $main-color;
+	text-decoration: none;
+
+	&:focus {
+		outline: none;
+		background-color: $sidebar-active-link-color;
+	}
+}

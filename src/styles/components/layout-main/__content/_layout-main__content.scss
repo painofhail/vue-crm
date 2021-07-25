@@ -1,0 +1,6 @@
+.layout-main__content {
+	padding-left: $sidebar-width;
+	transition: padding-left $sidebar-toggle-transition-time ease-in;
+}
+
+@import '--full/_layout-main__content--full.scss';

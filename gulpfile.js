@@ -11,7 +11,7 @@ function cleanDist () {
 
 // scss-transform, minify style-files
 function styles () {
-	return src('src/styles/style.scss')
+	return src(['node_modules/normalize.css/normalize.css', 'src/styles/style.scss'])
 		.pipe(concat('style.min.css'))								// files concatinating
 		.pipe(scss({outputStyle: 'compressed'}))			// compressed version
 		// .pipe(scss({ outputStyle: "expanded" }))   // readable version

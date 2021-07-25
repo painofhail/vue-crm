@@ -1,4 +1,5 @@
 export const routes = [
+	// ==================== EMPTY =======================
 	{
 		path: '/auth',
 		name: 'auth',
@@ -11,6 +12,7 @@ export const routes = [
 		meta: { layout: 'empty' },
 		component: () => import('../views/Register.vue')
 	},
+	// ==================== MAIN =======================
 	{
 		path: '/categories',
 		name: 'categories',

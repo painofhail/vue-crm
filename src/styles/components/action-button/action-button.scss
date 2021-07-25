@@ -1,0 +1,29 @@
+.action-button {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+
+	background-color: $action-btn-bg-color;
+	box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
+
+	transition: opacity 0.2s ease-in;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	span {
+		font-size: 36px;
+		line-height: 36px;
+		color: #fff;
+		margin-bottom: 4px;
+	}
+}
