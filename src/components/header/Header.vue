@@ -2,7 +2,7 @@
 	<header class="header">
 		<div class="header__wrapper">
 			<div class="header__nav-left">
-				<a :class="['burger-menu', {'burger-menu--open': burgerOpen }]" href="#" @click.prevent="toggleMenu">
+				<a :class="['burger-menu', {'burger-menu--open': burgerOpen }]" href="#" @click.prevent="clickBurger">
 					<span class="burger-menu__part" />
 					<span class="burger-menu__part" />
 					<span class="burger-menu__part" />
@@ -10,14 +10,9 @@
 				<span class="">{{date | dateFilter('date time')}}</span>
 			</div>
 
-			<ul class="hide-on-small-and-down">
+			<ul class="dropdown">
 				<li>
-					<a
-						class="dropdown-trigger black-text"
-						href="#"
-						data-target="dropdown"
-						ref="dropdown"
-					>
+					<a class="dropdown__trigger" href="#" data-target="dropdown" ref="dropdown">
 						<span>USER NAME</span>
 						<i class="material-icons">arrow_drop_down</i>
 					</a>
@@ -26,14 +21,14 @@
 						<li>
 							<router-link to="/profile" class="black-text">
 								<i class="material-icons">account_circle</i>
-								Профиль
+								<span>Профиль</span>
 							</router-link>
 						</li>
 						<li class="divider" tabindex="-1"></li>
 						<li>
 							<a to="#" class="black-text" @click.prevent="logout">
 								<i class="material-icons">assignment_return</i>
-								Выйти
+								<span>Выйти</span>
 							</a>
 						</li>
 					</ul>
@@ -75,12 +70,11 @@
 			}
 		},
 		methods: {
-			toggleMenu () {
+			clickBurger () {
 				this.burgerOpen = !this.burgerOpen;
-				this.$emit('toggleMenu');
+				this.$emit('clickBurger');
 			},
 			logout () {
-				console.log('logout');
 				this.$router.push('/auth?message=logout')
 			}
 		}

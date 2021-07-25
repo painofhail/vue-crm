@@ -1,0 +1,32 @@
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-Bold');
+	font-weight: 700;
+}
+
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-BoldItalic');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-Regular');
+	font-weight: 400;
+}
+
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-RegularItalic');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-Thin');
+	font-weight: 100;
+}
+
+@font-face {
+	@include FontDef-ttf($FontPathRoboto, 'Roboto-ThinItalic');
+	font-weight: 100;
+	font-style: italic;
+}

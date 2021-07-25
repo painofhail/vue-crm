@@ -1,0 +1,10 @@
+a {
+	@include ApplyFont(
+		$font-family: Roboto-Regular,
+		$font-size: 14px,
+		$line-height: 24px,
+		$color: $main-color
+	);
+
+	text-decoration: none;
+}

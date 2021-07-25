@@ -1,6 +1,6 @@
 <template>
 	<div class="layout-main">
-		<Header @toggleMenu="showMenu = !showMenu" />
+		<Header @clickBurger="showMenu = !showMenu" />
 		<Sidebar :show="showMenu" />
 
 		<main class="layout-main__content" :class="{'layout-main__content--full' : !showMenu}">

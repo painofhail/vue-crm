@@ -1,7 +1,8 @@
 <template>
 	<div id="app">
 		<component :is="layout">
-			<router-view /> <!-- Vue рендерит сюда все страницы, которые загружаются по роуту -->
+			<!-- Vue рендерит сюда все страницы, которые загружаются по роуту -->
+			<router-view />
 		</component>
 	</div>
 </template>

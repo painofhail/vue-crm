@@ -19,6 +19,11 @@ function styles () {
 		.pipe(dest('dist/styles/'))
 }
 
+function fonts () {
+	return src('src/fonts/**/*.ttf')
+		.pipe(dest('dist/fonts/'))
+}
+
 // watch for src-files
 function watching () {
 	watch('src/styles/**/*.scss', styles)
@@ -29,5 +34,5 @@ exports.default = parallel (styles, watching);
 
 exports.build = series (
 	cleanDist,
-	parallel (styles)
+	parallel (fonts, styles)
 );
