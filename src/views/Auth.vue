@@ -21,7 +21,8 @@
 					id="password"
 					type="password"
 					v-model="password"
-					:class="{ invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength) }"
+					:class="{ invalid: ($v.password.$dirty && !$v.password.required) ||
+															($v.password.$dirty && !$v.password.minLength) }"
 				>
 				<label for="password">Пароль</label>
 				<small class="helper-text invalid" v-if="($v.password.$dirty && !$v.password.required)">
