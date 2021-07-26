@@ -2,4 +2,10 @@
 	display: flex;
 	align-items: center;
 	height: $header-height;
+	transition: background-color 0.2s ease-in;
+	padding: 0 10px;
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 }

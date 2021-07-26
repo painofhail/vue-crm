@@ -15,13 +15,13 @@
 		</div>
 		<div class="card-action">
 			<div>
-				<button class="btn waves-effect waves-light auth-submit" type="submit">
+				<button class="btn waves-effect waves-light auth-card__btn-sumbit" type="submit">
 					Войти
 					<i class="material-icons right">send</i>
 				</button>
 			</div>
 
-			<p class="center">Нет аккаунта?<a href="/">Зарегистрироваться</a></p>
+			<p class="center">Нет аккаунта?<a href="/"> Зарегистрироваться</a></p>
 		</div>
 	</form>
 </template>
