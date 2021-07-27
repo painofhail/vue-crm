@@ -80,7 +80,7 @@
 			}
 		},
 		methods: {
-			submitHandler() {
+			async submitHandler() {
 				if (this.$v.$invalid) {
 					this.$v.$touch();
 					return;
@@ -91,7 +91,13 @@
 					password: this.password
 				};
 
-				this.$router.push("/");
+				try {
+					await this.$store.dispatch('auth', formData);
+					this.$router.push("/");
+				} catch (e) {
+
+				}
+
 			}
 		}
 	}

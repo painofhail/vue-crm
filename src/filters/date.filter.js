@@ -1,3 +1,8 @@
+// examples
+// | dateFilter('date time') --> 27 июля 2021 г., 20:30:49
+// | dateFilter('date') --> 27 июля 2021 г.
+// | dateFilter('time') --> 20:30:49
+
 export default function dateFilter (value, format = 'date') {
 	const options = {};
 
