@@ -18,7 +18,7 @@
 	import Sidebar from '@/components/sidebar/Sidebar';
 
 	export default {
-		name: 'main-layout',
+		name: 'MainLayout',
 		data: () => ({
 			showMenu: true,
 		}),

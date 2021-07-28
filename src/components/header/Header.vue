@@ -74,7 +74,8 @@
 				this.burgerOpen = !this.burgerOpen;
 				this.$emit('clickBurger');
 			},
-			logout () {
+			async logout () {
+				this.$store.dispatch('logout');
 				this.$router.push('/auth?message=logout')
 			}
 		}
