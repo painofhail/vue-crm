@@ -1,15 +1,19 @@
 <template>
-	<div class="layout-main">
-		<Header @clickBurger="showMenu = !showMenu" />
-		<Sidebar :show="showMenu" />
+	<div>
+		<Loader v-if="loading" />
 
-		<main class="layout-main__content" :class="{'layout-main__content--full' : !showMenu}">
-			<div class="layout-main__wrapper">
-				<router-view />
-			</div>
-		</main>
+		<div v-else class="layout-main">
+			<Header @clickBurger="showMenu = !showMenu" />
+			<Sidebar :show="showMenu" />
 
-		<router-link class="action-button" to="/record"><span>+</span></router-link>
+			<main class="layout-main__content" :class="{'layout-main__content--full' : !showMenu}">
+				<div class="layout-main__wrapper">
+					<router-view />
+				</div>
+			</main>
+
+			<router-link class="action-button" to="/record"><span>+</span></router-link>
+		</div>
 	</div>
 </template>
 
@@ -21,10 +25,18 @@
 		name: 'MainLayout',
 		data: () => ({
 			showMenu: true,
+			loading: true
 		}),
 		components: {
 			Header,
 			Sidebar
+		},
+		async mounted () {
+			if (!Object.keys(this.$store.getters.userInfo).length) {
+				await this.$store.dispatch('fetchUserInfo');
+			}
+
+			this.loading = false;
 		}
 	}
 </script>

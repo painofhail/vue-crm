@@ -11,6 +11,11 @@ import '@/registerServiceWorker';
 import router from '@/router';
 import store from '@/store';
 
+// ================== Custom Components =======================
+import loader from '@/components/App/loader/Loader';
+
+Vue.component('Loader', loader);
+
 // ======================= Plugins ============================
 import messagePlugin from '@/utils/message.plugin';
 
@@ -47,8 +52,10 @@ firebase.auth().onAuthStateChanged(() => {
 
 // ======================= Filters ============================
 import dateFilter from '@/filters/date.filter';
+import currencyFilter from '@/filters/currency.filter';
 
 Vue.filter('dateFilter', dateFilter);
+Vue.filter('currencyFilter', currencyFilter);
 // ============================================================
 
 Vue.config.productionTip = false;

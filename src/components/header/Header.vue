@@ -13,7 +13,7 @@
 			<ul class="dropdown">
 				<li>
 					<a class="dropdown__trigger" href="#" data-target="dropdown" ref="dropdown">
-						<span>USER NAME</span>
+						<span>{{ userName }}</span>
 						<i class="material-icons">arrow_drop_down</i>
 					</a>
 
@@ -55,6 +55,11 @@
 			interval: null,
 			dropdown: null
 		}),
+		computed: {
+			userName () {
+				return this.$store.getters.userInfo.name ? this.$store.getters.userInfo.name : null;
+			}
+		},
 		mounted () {
 			this.interval = setInterval(() => {
 				this.date = new Date();
