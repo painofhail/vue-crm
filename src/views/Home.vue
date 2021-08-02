@@ -20,7 +20,7 @@
 <script>
 
 	import HomeBill from '@/components/homeBill/HomeBill';
-	import HomeCurrency from '@/components/homeCurrency/HomeCurrency';
+	import HomeCurrency from '@/components/home-currency/HomeCurrency';
 
 	export default {
 		name: 'Home',
