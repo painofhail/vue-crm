@@ -4,9 +4,19 @@
 			<h3>Категории</h3>
 		</div>
 		<section>
-			<div class="row">
+			<Loader v-if="loading" />
+
+			<div v-else class="row">
 				<CategoryCreate @created="addNewCategory" />
-				<CategoryEdit />
+				<CategoryEdit
+					v-if="categories.length"
+					:categories="categories"
+					@updated="updateCategories"
+					:key="categories.length + updateCount"
+				/>
+				<!-- key - чтобы при обновлении категории перерисовывался компонент -->
+
+				<p v-else class="center">Пока категорий не создано</p>
 			</div>
 		</section>
 	</div>
@@ -24,12 +34,23 @@
 			CategoryEdit
 		},
 		data: () => ({
-			categories: []
+			categories: [],
+			loading: true,
+			updateCount: 0
 		}),
+		async mounted () {
+			this.categories = await this.$store.dispatch('fetchCategories');
+			this.loading = false;
+		},
 		methods: {
 			addNewCategory (cat) {
 				this.categories.push(cat);
-				console.log(this.categories)
+			},
+			updateCategories (cat) {
+				const index = this.categories.findIndex(c => c.id === cat.id);
+				this.categories[index].title = cat.title;
+				this.categories[index].limit = cat.limit;
+				this.updateCount++;
 			}
 		}
 
