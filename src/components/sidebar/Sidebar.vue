@@ -8,7 +8,7 @@
 			custom
 		>
 			<li :class="['sidebar__item', { 'sidebar__item--active': isExactActive }]">
-				<a :href="href" class="sidebar__link" @click="navigate">{{link.name}}</a>
+				<a :href="href" class="sidebar__link waves-effect waves-orange" @click="navigate">{{link.name}}</a>
 			</li>
 		</router-link>
 	</ul>
