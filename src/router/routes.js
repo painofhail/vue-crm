@@ -9,50 +9,50 @@ export const routes = [
 	{
 		path: '/register',
 		name: 'register',
-		meta: { layout: 'empty' },
+		meta: { layout: 'empty', auth: true },
 		component: () => import('../views/Register.vue')
 	},
 	// ==================== MAIN =======================
 	{
 		path: '/categories',
 		name: 'categories',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Categories.vue')
 	},
 	{
 		path: '/detail',
 		name: 'detail',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Detail.vue')
 	},
 	{
 		path: '/history',
 		name: 'history',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/History.vue')
 	},
 	{
 		path: '/',
 		name: 'Home',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Home.vue')
 	},
 	{
 		path: '/planning',
 		name: 'planning',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Planning.vue')
 	},
 	{
 		path: '/profile',
 		name: 'profile',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Profile.vue')
 	},
 	{
 		path: '/record',
 		name: 'record',
-		meta: { layout: 'main' },
+		meta: { layout: 'main', auth: true },
 		component: () => import('../views/Record.vue')
 	}
 ];

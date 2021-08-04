@@ -20,6 +20,7 @@
 <script>
 	import Header from '@/components/header/Header';
 	import Sidebar from '@/components/sidebar/Sidebar';
+	import messages from '@/utils/messages';
 
 	export default {
 		name: 'MainLayout',
@@ -30,6 +31,16 @@
 		components: {
 			Header,
 			Sidebar
+		},
+		computed: {
+			error () {
+				return this.$store.getters.error;
+			}
+		},
+		watch: {
+			error (firebaseError) {
+				this.$error(messages[firebaseError.code] || 'Что-то пошло не так...');
+			}
 		},
 		async mounted () {
 			if (!Object.keys(this.$store.getters.userInfo).length) {
