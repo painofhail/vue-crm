@@ -21,6 +21,11 @@ import messagePlugin from '@/utils/message.plugin';
 
 Vue.use(messagePlugin);
 
+// ======================= Directives ============================
+import tooltipDirective from '@/directives/tooltip.directive';
+
+Vue.directive('tooltip', tooltipDirective);
+
 // ======================= Firebase ===========================
 import firebase from 'firebase/app';
 import 'firebase/auth';

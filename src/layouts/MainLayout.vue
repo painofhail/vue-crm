@@ -12,7 +12,7 @@
 				</div>
 			</main>
 
-			<router-link class="action-button" to="/record"><span>+</span></router-link>
+			<router-link class="action-button" to="/record" v-tooltip="'Создать новую запись'"><span>+</span></router-link>
 		</div>
 	</div>
 </template>

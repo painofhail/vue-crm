@@ -8,7 +8,22 @@ export default {
 				return await firebase.database().ref(`/users/${uid}/records`).push(record);
 			} catch (e) {
 				commit('setError', e);
-				throw (e)
+				throw e
+			}
+		},
+		async fetchRecords ({dispatch, commit}) {
+			try {
+				const uid = await dispatch('getUserId');
+				const records = (await firebase.database().ref(`/users/${uid}/records`).once('value')).val();
+
+				if (records && records.length !== 0) {
+					return Object.keys(records).map(key => ({ ...records[key], id: key }));
+				}
+
+				return [];
+			} catch (e) {
+				commit('setError', e);
+				throw e
 			}
 		}
 	}

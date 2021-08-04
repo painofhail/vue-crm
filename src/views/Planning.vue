@@ -2,22 +2,69 @@
 	<div>
 		<div class="page-title">
 			<h3>Планирование</h3>
-			<h4>12 212</h4>
+			<h4>{{ userInfo.bill | currencyFilter('RUB') }}</h4>
 		</div>
 
-		<section>
-			<div>
-				<p>
-					<strong>Девушка:</strong>
-					12 122 из 14 0000
+		<Loader v-if="loading" />
+
+		<p v-else-if="!categories.length" class="center">Категорий пока нет.
+			<router-link to="/categories">Добавить новую категорию</router-link>
+		</p>
+
+		<section v-else>
+			<div v-for="cat in categories" :key="cat.id">
+				<p><strong>{{ cat.title }}: </strong>
+				{{ cat.spend | currencyFilter('RUB') }} из {{ cat.limit | currencyFilter('RUB') }}
 				</p>
-				<div class="progress" >
-					<div
-							class="determinate green"
-							style="width:40%"
-					></div>
+				<div class="progress" v-tooltip="cat.tooltip">
+					<div class="determinate" :class="cat.progressColor" :style="{ width: cat.progressPercent + '%' }"></div>
 				</div>
 			</div>
 		</section>
 	</div>
 </template>
+
+<script>
+	import { mapGetters } from 'vuex';
+	import currencyFilter from '@/filters/currency.filter';
+
+	export default {
+		name: 'Planning',
+		data: () => ({
+			loading: true,
+			categories: []
+		}),
+		computed: {
+			...mapGetters(['userInfo']),
+		},
+		async mounted () {
+			const records = await this.$store.dispatch('fetchRecords');
+			const categories = await this.$store.dispatch('fetchCategories');
+
+			this.categories = categories.map(cat => {
+				const spend = records
+					.filter(record => record.categoryId === cat.id)
+					.filter(record => record.type === 'outcome')
+					.reduce((total, record) => { return total += +record.amount}, 0)
+
+				const percent = (100 * spend / cat.limit)
+				const progressPercent = (percent > 100) ? 100 : percent;
+
+				const progressColor = percent < 60
+					? 'green'
+					: percent < 100
+						? 'yellow'
+						: 'red';
+
+				const tooltipValue = cat.limit - spend;
+				const tooltip = `${tooltipValue < 0 ? 'Превышено на ' : 'Осталось '} ${currencyFilter(Math.abs(tooltipValue))}`
+
+				return { ...cat, progressPercent, progressColor, spend, tooltip };
+
+			})
+
+			this.loading = false;
+		}
+	}
+
+</script>
