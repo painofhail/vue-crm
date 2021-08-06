@@ -11,6 +11,11 @@ import '@/registerServiceWorker';
 import router from '@/router';
 import store from '@/store';
 
+// ================== Third party components =======================
+import Paginate from 'vuejs-paginate'
+
+Vue.component('Paginate', Paginate)
+
 // ================== Custom Components =======================
 import loader from '@/components/App/loader/Loader';
 
