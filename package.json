@@ -8,6 +8,7 @@
     "test": "editorconfig-checker --exclude node_modules --exclude .git"
   },
   "dependencies": {
+    "chart.js": "^2.8.0",
     "core-js": "^3.6.5",
     "editorconfig-checker": "^4.0.2",
     "firebase": "^8.8.0",
@@ -16,6 +17,7 @@
     "normalize.css": "^8.0.1",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-chartjs": "^3.4.2",
     "vue-router": "^3.2.0",
     "vuejs-paginate": "^2.1.0",
     "vuelidate": "^0.7.6",
