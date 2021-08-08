@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test": "editorconfig-checker --exclude node_modules --exclude .git"
+    "test": "editorconfig-checker --exclude node_modules --exclude .git --exclude .firebase"
   },
   "dependencies": {
     "chart.js": "^2.8.0",
@@ -14,10 +14,10 @@
     "firebase": "^8.8.0",
     "lodash": "^4.17.21",
     "materialize-css": "^1.0.0-rc.2",
-    "normalize.css": "^8.0.1",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.4.2",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0",
     "vuejs-paginate": "^2.1.0",
     "vuelidate": "^0.7.6",
@@ -29,11 +29,6 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "del": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^5.0.0",
     "node-sass": "^4.12.0",
     "sass": "^1.35.2",
     "sass-loader": "^8.0.2",

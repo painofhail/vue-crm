@@ -48,6 +48,11 @@
 
 	export default {
 		name: 'Auth',
+		metaInfo () {
+			return {
+				title: this.$title('Auth')
+			}
+		},
 		data: () => ({
 			email: '',
 			password: ''

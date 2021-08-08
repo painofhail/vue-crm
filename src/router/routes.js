@@ -9,7 +9,7 @@ export const routes = [
 	{
 		path: '/register',
 		name: 'register',
-		meta: { layout: 'empty', auth: true },
+		meta: { layout: 'empty' },
 		component: () => import('../views/Register.vue')
 	},
 	// ==================== MAIN =======================

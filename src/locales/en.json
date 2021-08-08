@@ -1,5 +1,5 @@
 {
-  "ProfileTitle": "Profile",
+  "Profile": "Profile",
   "Name": "Name",
   "EnterName": "Enter name",
   "Update": "Update",
@@ -7,6 +7,10 @@
   "Bill": "Bill",
   "History": "History",
   "Planning": "Planning",
-  "NewRecord": "New Record",
-  "Categories": "Categories"
+  "Record": "New Record",
+  "Detail": "Detail",
+  "Categories": "Categories",
+  "Home": "Currency",
+  "Register": "Registration",
+  "Auth": "Auth"
 }

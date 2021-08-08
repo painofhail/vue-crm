@@ -21,16 +21,10 @@
 		data: () => ({
 			currencies: ['RUB', 'USD', 'EUR']
 		}),
-		computed: {
-			// Сколько валюты в евро
-			base () {
-				return this.$store.getters.userInfo.bill * (this.rates['EUR'] / this.rates['RUB']);
-			}
-		},
 		methods: {
 			// Пересчёт в другие валюты
 			getCurrency(currency) {
-				return Math.floor(this.base * this.rates[currency]);
+				return Math.floor(this.$store.getters.userInfo.bill / this.rates[currency]);
 			}
 		}
 	}

@@ -1,9 +1,6 @@
 // ======================= Libraries ==========================
 import Vue from 'vue';
-import Vuelidate from 'vuelidate';
 import 'materialize-css/dist/js/materialize';
-
-Vue.use(Vuelidate);
 
 // ======================= Sources ============================
 import App from '@/App.vue';
@@ -22,9 +19,15 @@ import loader from '@/components/App/loader/Loader';
 Vue.component('Loader', loader);
 
 // ======================= Plugins ============================
+import Vuelidate from 'vuelidate';
+import VueMeta from 'vue-meta'
 import messagePlugin from '@/utils/message.plugin';
+import titlePlugin from '@/utils/title.plugin';
 
+Vue.use(Vuelidate);
+Vue.use(VueMeta)
 Vue.use(messagePlugin);
+Vue.use(titlePlugin);
 
 // ======================= Directives ============================
 import tooltipDirective from '@/directives/tooltip.directive';

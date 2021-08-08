@@ -58,6 +58,11 @@
 
 	export default {
 		name: 'Record',
+		metaInfo () {
+			return {
+				title: this.$title('Record')
+			}
+		},
 		data: () => ({
 			loading: true,
 			select: null,

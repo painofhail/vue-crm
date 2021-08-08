@@ -24,9 +24,14 @@
 
 	export default {
 		name: 'Home',
+		metaInfo () {
+			return {
+				title: this.$title('Home')
+			}
+		},
 		data: () => ({
 			loading: true,
-			currency: null
+			currency: []
 		}),
 		components: {
 			HomeBill,

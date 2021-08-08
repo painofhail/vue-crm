@@ -29,6 +29,11 @@
 
 	export default {
 		name: 'Categories',
+		metaInfo () {
+			return {
+				title: this.$title('Categories')
+			}
+		},
 		components: {
 			CategoryCreate,
 			CategoryEdit

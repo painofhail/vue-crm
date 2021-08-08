@@ -32,7 +32,7 @@
 					{ name: localizeFilter('Bill'), url: '/' },
 					{ name: localizeFilter('History'), url: '/history' },
 					{ name: localizeFilter('Planning'), url: '/planning' },
-					{ name: localizeFilter('NewRecord'), url: '/record' },
+					{ name: localizeFilter('Record'), url: '/record' },
 					{ name: localizeFilter('Categories'), url: '/categories' }
 				]
 			}

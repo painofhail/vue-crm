@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="page-title">
-			<h3>{{ 'ProfileTitle' | localizeFilter }}</h3>
+			<h3>{{ 'Profile' | localizeFilter }}</h3>
 		</div>
 
 		<form class="form" @submit.prevent="submitHandler">
@@ -31,9 +31,15 @@
 <script>
 	import { mapGetters, mapActions } from 'vuex';
 	import { required } from 'vuelidate/lib/validators';
+	import localizeFilter from '../filters/localize.filter';
 
 	export default {
 		name: 'Profile',
+		metaInfo () {
+			return {
+				title: this.$title('Profile')
+			}
+		},
 		data: () => ({
 			name: '',
 			isRuLocale: true

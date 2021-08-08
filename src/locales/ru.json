@@ -1,5 +1,5 @@
 {
-  "ProfileTitle": "Профиль",
+  "Profile": "Профиль",
   "Name": "Имя",
   "EnterName": "Введите имя",
   "Update": "Обновить",
@@ -7,6 +7,10 @@
   "Bill": "Счет",
   "History": "История",
   "Planning": "Планирование",
-  "NewRecord": "Новая запись",
-  "Categories": "Категории"
+  "Record": "Новая запись",
+  "Detail": "Детализация",
+  "Categories": "Категории",
+  "Home": "Счет",
+  "Register": "Регистрация",
+  "Auth": "Вход"
 }
