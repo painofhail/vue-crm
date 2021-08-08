@@ -63,9 +63,11 @@ firebase.auth().onAuthStateChanged(() => {
 // ======================= Filters ============================
 import dateFilter from '@/filters/date.filter';
 import currencyFilter from '@/filters/currency.filter';
+import localizeFilter from '@/filters/localize.filter';
 
 Vue.filter('dateFilter', dateFilter);
 Vue.filter('currencyFilter', currencyFilter);
+Vue.filter('localizeFilter', localizeFilter);
 // ============================================================
 
 Vue.config.productionTip = false;

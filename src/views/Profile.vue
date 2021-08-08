@@ -1,27 +1,27 @@
 <template>
 	<div>
 		<div class="page-title">
-			<h3>Профиль</h3>
+			<h3>{{ 'ProfileTitle' | localizeFilter }}</h3>
 		</div>
 
 		<form class="form" @submit.prevent="submitHandler">
 			<div class="input-field">
 				<input id="description"	type="text" v-model.trim="name" :class="{ invalid: emptyName }">
-				<label for="description">Имя</label>
-				<span	class="helper-text invalid" v-if="emptyName">Введите имя</span>
+				<label for="description">{{ 'Name' | localizeFilter }}</label>
+				<span	class="helper-text invalid" v-if="emptyName">{{ 'EnterName' | localizeFilter }}</span>
 			</div>
 
 			<div class="switch">
 				<label>
 					English
-					<input type="checkbox">
+					<input type="checkbox" v-model="isRuLocale">
 					<span class="lever"></span>
-					Русский
+					{{ 'Russian' | localizeFilter }}
 				</label>
 			</div>
 
 			<button class="btn waves-effect waves-light" type="submit">
-				Обновить
+				{{ 'Update' | localizeFilter }}
 				<i class="material-icons right">send</i>
 			</button>
 		</form>
@@ -35,7 +35,8 @@
 	export default {
 		name: 'Profile',
 		data: () => ({
-			name: ''
+			name: '',
+			isRuLocale: true
 		}),
 		validations: {
 			name: { required }
@@ -48,6 +49,7 @@
 		},
 		mounted () {
 			this.name = this.userInfo.name;
+			this.isRuLocale = (this.userInfo.locale === 'ru-RU');
 			setTimeout(() => { M.updateTextFields() }, 0)
 		},
 		methods: {
@@ -59,7 +61,12 @@
 				}
 
 				try {
-					await this.updateUserInfo({ name: this.name });
+					await this.updateUserInfo({
+						name: this.name,
+						locale: this.isRuLocale ? 'ru-RU' : 'en-US'
+					});
+
+					this.$message('Пока переведена только страница профиля');
 
 				} catch (e) {
 					throw (e);

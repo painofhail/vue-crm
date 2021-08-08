@@ -15,13 +15,7 @@
 </template>
 
 <script>
-	const links = [
-		{ name: 'Счет', url: '/' },
-		{ name: 'История', url: '/history' },
-		{ name: 'Планирование', url: '/planning' },
-		{ name: 'Новая запись', url: '/record' },
-		{ name: 'Категории', url: '/categories' }
-	]
+	import localizeFilter from '@/filters/localize.filter';
 
 	export default {
 		name: 'Sidebar',
@@ -34,7 +28,13 @@
 		},
 		data () {
 			return {
-				links
+				links : [
+					{ name: localizeFilter('Bill'), url: '/' },
+					{ name: localizeFilter('History'), url: '/history' },
+					{ name: localizeFilter('Planning'), url: '/planning' },
+					{ name: localizeFilter('NewRecord'), url: '/record' },
+					{ name: localizeFilter('Categories'), url: '/categories' }
+				]
 			}
 		},
 	}

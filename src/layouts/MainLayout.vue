@@ -4,7 +4,7 @@
 
 		<div v-else class="layout-main">
 			<Header @clickBurger="showMenu = !showMenu" />
-			<Sidebar :show="showMenu" />
+			<Sidebar :show="showMenu" :key="locale" />
 
 			<main class="layout-main__content" :class="{'layout-main__content--full' : !showMenu}">
 				<div class="layout-main__wrapper">
@@ -35,6 +35,9 @@
 		computed: {
 			error () {
 				return this.$store.getters.error;
+			},
+			locale () {
+				return this.$store.getters.userInfo.locale;
 			}
 		},
 		watch: {
