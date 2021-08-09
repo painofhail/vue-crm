@@ -15,7 +15,7 @@ router.beforeEach((to, from, next) => {
 	const currentUser = firebase.auth().currentUser;	// проверяем, есть ли пользователь
 	const requireAuth = to.matched.some(record => record.meta.auth); // есть в ли массиве роутов поле auth
 
-	if (requireAuth && !currentUser ) {
+	if (requireAuth && !currentUser) {
 		next('/auth?message=login')
 	} else {
 		next();
